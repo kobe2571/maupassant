@@ -1,34 +1,22 @@
-<?php
-/**
- * 简单的响应式模板
- * 
- * @package Maupassant
- * @author cho
- * @version 1.0
- * @link http://pagecho.com
- */
- 
- $this->need('header.php');
- ?>
-
+<?php get_header(); ?>
 <div class="col-8" id="main">
 	<div class="res-cons">
-		<?php while($this->next()): ?>
+		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<article class="post">
 				<h2 class="post-title">
-					<a href="<?php $this->permalink() ?>"><?php $this->title() ?></a>
+					<a href="<?php the_permalink() ?>"><?php the_title() ?></a>
 				</h2>
 				<ul class="post-meta">
-					<li><?php $this->date('F j, Y'); ?></li>
-					<li class="comment-count"><a rel="nofollow" href="<?php $this->permalink() ?>#comments"><?php $this->commentsNum('0 条评论', '1 条评论', '%d 条评论'); ?></a></li>
+					<li><?php the_time('F j, Y'); ?></li>
+					<li class="comment-count"><?php comments_popup_link('0 条评论', ' 1 条评论', '% 条评论'); ?></li>
 				</ul>
 				<div class="post-content">
-					<?php $this->content('阅读剩余部分 -'); ?>
+					<?php the_content('阅读剩余部分 -'); ?>
 				</div>
 			</article>
-		<?php endwhile; ?>
-		<?php $this->pageNav('&laquo; Previous','Next &raquo;',10,'...');?>
+		<?php endwhile; endif;?>
+		<?php pagenavi();?>
 	</div>
 </div>
-<?php $this->need('sidebar.php'); ?>
-<?php $this->need('footer.php'); ?>
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>

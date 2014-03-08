@@ -1,7 +1,7 @@
 /**
  * 
  * @package Maupassant
- * @author cho
+ * @author cho, grafting by mufeng
  * @version 1.1
  * @link http://pagecho.com
  */
@@ -109,9 +109,20 @@ color:#777;
 	padding:0;
 	float:right;
 }
-#nav-menu a {
+
+#nav-menu ul{
+	display: block;
+	margin:0;
+	padding:0;
+}
+
+#nav-menu li{
 	display:inline-block;
 	margin-right:-1px;
+}
+
+#nav-menu a {
+	display: block;
 	padding:0 20px;
 	height:32px;
 	line-height:32px;
@@ -121,7 +132,8 @@ color:#777;
 	border:none;
 }
 #nav-menu a:hover{}
-#nav-menu a.current {
+#nav-menu .current-post-parent a,
+#nav-menu .current-menu-item a {
 	border:1px solid #ddd;
 	border-bottom:1px solid #fff;
 }
@@ -144,7 +156,7 @@ color:#777;
 	padding:0;
 	width:24px;
 	height:24px;
-	background:transparent url(http://x.papaapp.com/farm1/a571d2/232aa4ce/icon-search.png) no-repeat center center;
+	background:transparent url(img/icon-search.png) no-repeat center center;
 	text-indent:-9999em;
 }
 .col-8 {
@@ -242,7 +254,8 @@ width:800px;
 	display:inline-block;
 	margin:0 5px 5px 0;
 }
-.page-navigator a {
+.page-navigator a,
+.page-navigator span {
 	display:inline-block;
 	padding:0 10px;
 	height:25px;
@@ -254,7 +267,7 @@ width:800px;
 	background:#F8F8F8;
 	border-bottom-color:#D26911;
 }
-.page-navigator .current a {
+.page-navigator .current span {
 	background:#F8F8F8;
 	border-bottom-color:#D26911;
 }
@@ -270,6 +283,12 @@ width:800px;
 	padding:22px 0 0;
 	border-top:1px solid #ddd;
 }
+
+ol.comment-list ul.children,
+ol.comment-list li.comment{
+	list-style: none
+}
+
 .comment-list li.comment-level-even {
 	background:#FFF;
 }
@@ -278,7 +297,7 @@ width:800px;
 	margin-top:-39px;
 	font-size:.92857em;
 }
-.comment-meta a {
+.comment-meta{
 	color:#999;
 	font-size:.92857em;
 }
@@ -316,16 +335,16 @@ width:800px;
 	margin-top:15px;
 	font-size:.92857em;
 }
-#comment-form {
+#comment_form {
 	padding-top:5px;
 }
-#comment-form label {
+#comment_form label {
 	display:block;
 	color:#888;
 	position:absolute;
 	margin:8px;
 }
-#comment-form input{
+#comment_form input{
 	padding:5px 6px;
 	line-height:16px;
 	height:32px;
@@ -345,6 +364,7 @@ button.submit{
 	width:100%;
 	outline:none;
 	background:#e8e8e8;
+	cursor: pointer;
 }
 button.submit:hover{
 	background:#dfdfdf;
@@ -396,11 +416,11 @@ textarea.textarea{
 #comments .widget-title{
 	margin-bottom:0;
 }
-.widget-list {
+.widget ul {
 	list-style:none;
 	padding:0;
 }
-.widget-list li {
+.widget ul li {
 	margin:5px 0;
 	line-height:1.5;
 }
