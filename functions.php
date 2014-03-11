@@ -4,7 +4,7 @@
  * 
  * @package Maupassant
  * @author cho, grafting by mufeng
- * @version 1.1
+ * @version 1.13
  * @link http://pagecho.com
  */
 
@@ -12,7 +12,7 @@
 	define( "THEMEPATH", get_bloginfo('template_directory') );
 
 	// 定义主题版本号
-	define( "THEMEVERSION", '1.1' );
+	define( "THEMEVERSION", '1.13' );
 
 	// 添加RSS
 	add_theme_support( 'automatic-feed-links' );
@@ -124,6 +124,7 @@
 		?>
 		<meta name="keywords" content="<?php echo $keywords; ?>" />
 		<meta name="description" content="<?php echo $description; ?>" />
+		<meta name="viewport" content="initial-scale=1.0,user-scalable=no">
 		<link rel="shortcut icon" href="<?php bloginfo('url'); ?>/favicon.ico" type="image/x-icon" />
 		<?php wp_head();?>
 	<?php 
