@@ -12,7 +12,7 @@
 	define( "THEMEPATH", get_bloginfo('template_directory') );
 
 	// 定义主题版本号
-	define( "THEMEVERSION", '1.13' );
+	define( "THEMEVERSION", '1.14' );
 
 	// 添加RSS
 	add_theme_support( 'automatic-feed-links' );

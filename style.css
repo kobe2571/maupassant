@@ -1,6 +1,6 @@
 /*
 Theme Name: Maupassant
-Version: 1.13
+Version: 1.14
 Author: cho, grafting by mufeng
 Author URI: http://pagecho.com
 */
@@ -442,6 +442,7 @@ textarea.textarea{
 }
 .post-content img,.comment-content img {
 	max-width:100%;
+	height: auto;
 }
 .post-content a img {
 	background:#FFF;
