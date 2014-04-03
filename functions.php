@@ -4,7 +4,7 @@
  * 
  * @package Maupassant
  * @author cho, grafting by mufeng
- * @version 1.13
+ * @version 1.14
  * @link http://pagecho.com
  */
 
